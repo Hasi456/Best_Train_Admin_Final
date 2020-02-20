@@ -1,0 +1,29 @@
+
+<div class="container">
+    <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm" style="margin-left: 200px;">
+      <div class="form-group" style="margin-top: 20%;" >
+        
+        <h2>Login to continue</h2><br><br>
+        <img src="../assets/images/trainicon.png" style="width: 100px; height: 100px; margin-left: 10%; margin-bottom: 40px;"><br>
+        <label class="h4 form-control-label" for="input1">Email<abbr class="text-danger" title="This is required">*</abbr></label>
+        <input type="text" style="width:40%;margin-bottom: 5%;" class="form-control" id="Uname" (ngModel)="email" name="email" aria-describedby="emailHelp" placeholder="Enter Username"  required>
+        
+      </div>
+      <div class="form-group">
+        <label class="h4 form-control-label" for="input2">Password<abbr class="text-danger" title="This field is required">*</abbr></label>
+        <input type="password" style="width:40%" class="form-control" id="pwd" (ngModel)="password" name="password" placeholder="Enter Password" required>
+        
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+        <label class="form-check-label" for="check">Keep me signed in</label><br>
+        <a routerLink="/reset_password" >forgot password?</a>
+      </div>
+      
+      <button  [disabled]="!loginForm.valid" type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 40%; margin-top: 5%;" >Sign In</button>
+    </form>
+    </div>
+
+      
+    
+    <router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+<div class ="container">
+        <div class="container" *ngFor="let train of trains">
+            <form #myForm="ngForm" (ngSubmit)="updateTrain(train.TrainName, train.Classes)">
+                
+                    <div class="form-row">
+                            
+                            <div class="form-group col-md-6" style="margin-top: 20%;" >
+                                    <label for="inputName">Name</label>
+                                    <input type="text" class="form-control" id="inputName"  placeholder="Enter Name" name="name" [(ngModel)]="train.TrainName">
+                                   
+                          
+                                          <div class="form-group" style="width: 50%;">
+                                                <label for="exampleSelect2">Classes</label>
+                                                <select class="form-control" id="exampleSelect2" name="class" [(ngModel)]="train.Classes">
+                                                  <option>1st/2nd/3rd</option>
+                                                  <option>2nd/3rd</option>
+                                                  <option>3rd</option>
+                                                  
+                                                </select>
+                                              </div>
+                             
+                         
+                    </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="margin-right: 20px; margin-bottom: 50%;">Update</button>
+                    <button type="button" class="btn btn-primary" routerLink="/train_details" style=" margin-bottom: 50%">Back</button>
+                    
+                  </form>
+                
+                </div>
+                <router-outlet></router-outlet>
+        
