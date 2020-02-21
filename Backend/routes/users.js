@@ -1,7 +1,6 @@
 const express=require('express');
 const router=express.Router();
 const mysql=require('mysql');
-var bcrypt = require('bcryptjs');
 const conn=require('../config/database');
 
 
@@ -10,7 +9,7 @@ router.post("/addTrain",(req,res)=>{
     //console.log(req.body);
    var sql="insert into train SET ?";
 
-   var values={TrainName:req.body.TrainName, TrainType:req.body.TrainType, Classes:req.body.Classes};
+   var values={TrainName:req.body.TrainName, Classes:req.body.Classes};
 
     conn.query(sql,values,function(err,result){
        
@@ -51,7 +50,7 @@ router.post("/edit_train/:id",(req,res)=>{
 
    var sql="update train SET ? where TrainNo=?" 
 
-   var values={TrainName:req.body.TrainName, TrainType:req.body.TrainType, Classes:req.body.Classes};
+   var values={TrainName:req.body.TrainName, Classes:req.body.Classes};
 
    var Id=req.params.id;
    conn.query(sql,[values,Id], function(err,result){
@@ -140,7 +139,7 @@ router.post("/addTrainSch",(req,res)=>{
 
    var values={TrainName:req.body.TrainName, TrainType:req.body.TrainType, Classes:req.body.Classes, StartStation:req.body.StartStation, EndStation:req.body.EndStation,Monday:req.body.Monday,
     Tuesday:req.body.Tuesday, Wednesday:req.body.Wednesday, Thursday:req.body.Thursday, Friday:req.body.Friday, Saturday:req.body.Saturday,
-     Sunday:req.body.Sunday, StopAt:req.body.StopAt,Station:req.body.Station};
+     Sunday:req.body.Sunday, StopAt:req.body.StopAt};
 
     conn.query(sql,values,function(err,result){
        

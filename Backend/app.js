@@ -6,21 +6,14 @@ const app=express();
 const path=require('path');
 const user=require('./routes/users');
 const config=require('./config/database');
-/*
-const conn=mysql.createConnec
-tion(config.database);
 
-if(conn){
-    console.log("database connected");
-}else{
-    console.log("database not connected");
-}*/ 
+
 app.use(cors());
 
-app.use(bodyParser.urlencoded({extended:false}));
+//app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname,"public")));
+//app.use(express.static(path.join(__dirname,"public")));
 
 app.use("/user",user);
 

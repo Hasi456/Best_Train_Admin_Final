@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {DemoService} from '../service/demo.service';
-//import {FlashMessagesService} from 'angular2-flash-messages';
 
 import { from } from 'rxjs';
 
@@ -15,12 +14,10 @@ export class AddTrainComponent implements OnInit {
 
  
   TrainName:String;
-  TrainType:String;
   Classes:String;
   
   constructor(
     private demoService:DemoService,
-    // private FlashMessage:FlashMessagesService
   ) { 
 
   }
@@ -32,7 +29,6 @@ export class AddTrainComponent implements OnInit {
 
     const train={
       TrainName:this.TrainName,
-      TrainType:this.TrainType,
       Classes:this.Classes,
       
     };
